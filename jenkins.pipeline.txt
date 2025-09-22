@@ -1,0 +1,24 @@
+pipeline{
+  agent any
+   stages{
+    stage('checkout'){
+     steps {
+      git 'https://github.com/cloudmaster2025/sonar.git'
+           } 
+         }
+    stage('build'){
+     steps {
+      echo 'build success'
+           } 
+        }
+    stage('test'){
+     steps {
+      sh '''echo "test success"
+            echo "test successing"
+            echo "hello dost"'''
+           } 
+       }
+       stage('deploy'){
+     steps {
+      echo 'build success'
+           } 
