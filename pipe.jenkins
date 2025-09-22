@@ -1,10 +1,25 @@
 pipeline{
     agent any
       stages{
-        stage{
+        stage('pull'){
             steps{
-              echo 'hello india'
-            }
+              git branch: 'branch12', url: 'https://github.com/shaktimaan-gangadhar/b24-evening.git'
+          }
         }
+        stage('build'){
+          steps{ 
+            echo 'build success'
+                }
+       }
+         stage('testing'){
+          steps{ 
+            echo 'Test success'
+                }
+}
+        stage('daily'){
+          steps{ 
+            echo 'deploy success'
+                }
+       }
+       }
       }
-        }
