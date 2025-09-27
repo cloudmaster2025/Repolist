@@ -28,7 +28,7 @@ pipeline{
       }
        stage('deploy'){
      steps {
-      echo 'build success'
+      deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tom-cred', path: '', url: 'http://54.195.190.166:8080/')], contextPath: 'student', war: '**/*.war'
            } 
 }
 }
